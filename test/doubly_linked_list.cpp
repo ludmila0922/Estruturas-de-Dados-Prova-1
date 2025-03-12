@@ -56,19 +56,19 @@ TEST_F(DoublyLinkedListTest, TestPopBack) {
 }
 
 // Test case to check the push_front and pop_front methods together
-//TEST_F(DoublyLinkedListTest, TestPushFrontAndPopFront) {
-//    list->push_front(30);
-//    list->push_front(40);
-//    EXPECT_EQ(list->size(), 2);
-//
-//    list->pop_front();
-//    EXPECT_EQ(list->size(), 1);
-//    auto it = list->find(30);
-//    EXPECT_NE(it, list->end());
-//
-//    it = list->find(40);
-//    EXPECT_EQ(it, list->end());
-//}
+TEST_F(DoublyLinkedListTest, TestPushFrontAndPopFront) {
+  list->push_front(30);
+    list->push_front(40);
+    EXPECT_EQ(list->size(), 2);
+
+list->pop_front();
+    EXPECT_EQ(list->size(), 1);
+    auto it = list->find(30);
+    EXPECT_NE(it, list->end());
+
+    it = list->find(40);
+    EXPECT_EQ(it, list->end());
+}
 
 // Test case to check if contains method works correctly
 TEST_F(DoublyLinkedListTest, TestContains) {
@@ -89,20 +89,19 @@ TEST_F(DoublyLinkedListTest, TestOperatorAccess) {
 }
 
 // Test case to check the erase method
-//TEST_F(DoublyLinkedListTest, TestErase) {
-//    list->push_back(10);
-//    list->push_back(20);
-//    list->push_back(30);
-//
-//    auto it1 = list->find(10);
-//    auto it2 = list->find(20);
-//
-//    list->erase(it1, it2 + 1);
-//
-//    EXPECT_EQ(list->size(), 1); // Only one element should remain in the list
-//    EXPECT_FALSE(list->contains(10)); // 10 should have been erased
-//    EXPECT_FALSE(list->contains(20)); // 20 should have been erased
-//}
+TEST_F(DoublyLinkedListTest, TestErase) {
+   list->push_back(10);
+   list->push_back(20);
+    list->push_back(30);
+
+    auto it1 = list->find(10);
+    auto it2 = list->find(20);
+    list->erase(it1, it2 + 1);
+
+    EXPECT_EQ(list->size(), 1); // Only one element should remain in the list
+    EXPECT_FALSE(list->contains(10)); // 10 should have been erased
+    EXPECT_FALSE(list->contains(20)); // 20 should have been erased
+}
 
 // Test case for the clear method
 //TEST_F(DoublyLinkedListTest, TestClear) {
